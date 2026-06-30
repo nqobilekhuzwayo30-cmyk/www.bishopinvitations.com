@@ -1,62 +1,126 @@
-Karl & Jacqueline - 25th Anniversary Celebration 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>25 Wonderful Years — Invitation</title>
 
-  
-25  
-Years  
- 
+  <!-- Google Fonts: Cinzel (serif) & Great Vibes (script) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet"> <!-- usage reference: font usage patterns [web:8][web:5] -->
 
-Twenty-Five Years of Love  
-~ ♡ ~ 
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="#hero">25 Years</a>
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#registry">Registry</a></li>
+      </ul>
+    </nav>
+  </header>
 
-Karl & Jacqueline  
-Our Love Story Continues... 
+  <!-- Botanical frame background (SVG overlay) -->
+  <div class="frame" aria-hidden="true">
+    <img src="assets/frame.svg" alt="" class="frame-img" />
+  </div>
 
-  
-Together with grateful hearts,  
-  
-we joyfully celebrate  
-  
-**25 Wonderful Years of Marriage,**  
-thanking Jehovah for His abundant  
-  
-love, guidance, and countless blessings  
-  
-throughout our journey.  
- 
+  <main id="main" class="container">
+    <!-- Hero: primary H1 -->
+    <section id="hero" class="hero" role="region" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <h1 id="hero-heading" class="hero-title">25 Wonderful Years of Marriage</h1>
+        <p class="hero-sub">Join us to celebrate twenty-five years of love, commitment, and faith.</p>
+        <a class="cta" href="#rsvp">RSVP</a>
+      </div>
+    </section>
 
-~ ♡ ~ 
+    <!-- Details block (grid layout) -->
+    <section id="details" class="details" aria-labelledby="details-heading">
+      <h2 id="details-heading">Event Details</h2>
+      <div class="details-grid">
+        <div class="card">
+          <h3>When</h3>
+          <p>Saturday, 12 December 2026 — Ceremony 3:00 PM; Guests to be seated by 2:45 PM.</p>
+        </div>
+        <div class="card">
+          <h3>Where</h3>
+          <p>Eagle Canyon Clubhouse — <a id="directions-link" href="#" target="_blank" rel="noopener">Get directions</a>.</p>
+          <!-- Embedded map -->
+          <div class="map-wrap" aria-hidden="false">
+            <!-- Use Maps Embed (replace PLACE_ID or query to exact address) -->
+            <iframe
+              title="Eagle Canyon Clubhouse map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...REPLACE_WITH_EMBED..."
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="map-iframe"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  
-We would be honoured if you would join us as we celebrate this precious milestone.  
- 
+    <!-- RSVP module -->
+    <section id="rsvp" class="rsvp" aria-labelledby="rsvp-heading">
+      <h2 id="rsvp-heading">RSVP</h2>
+      <form id="rsvp-form" class="rsvp-form" novalidate>
+        <div class="form-row">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" required aria-required="true" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+27..." />
+        </div>
+        <div class="form-row">
+          <label for="guests">Number of guests</label>
+          <input id="guests" name="guests" type="number" min="1" max="10" value="1" required aria-required="true" />
+        </div>
+        <div class="form-row">
+          <label for="message">Message (dietary / accessibility)</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
 
-  
-Saturday, 29 August 2026  
-6:00 pm (Guests to be seated)  
- 
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Send RSVP</button>
+          <button type="button" id="export-csv" class="btn-secondary">Export CSV</button>
+        </div>
 
-♡ 
+        <div id="form-status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
 
-  
-Eagle Canyon Clubhouse  
-Randpark Ridge, South Africa  
- 
+    <!-- Registry / gift section -->
+    <section id="registry" class="registry" aria-labelledby="registry-heading">
+      <h2 id="registry-heading">Registry & Gift Guidance</h2>
+      <p class="registry-intro">Your presence is the present. If you ask about gifts, a card box will be available at the venue.</p>
 
-♡ 
+      <div class="card-box">
+        <h3>Card Box</h3>
+        <p>For guests who wish to give a card or contribution, the Card Box will be placed at the venue entrance; contact email available on RSVP confirmation.</p>
+      </div>
 
-  
-RSVP BY 12 AUGUST 2026  
-Jacqueline  
-083 289 6775  
- 
+      <div class="privacy-note" aria-hidden="false">
+        <p>This page is set to no-index for privacy; family details are not published to search engines.</p>
+      </div>
+    </section>
 
-With Love... 
+  </main>
 
-  
-MANY OF YOU HAVE KINDLY ASKED ABOUT GIFTS  
-If you would like to be a part of our next adventure, a card box will be available at the celebration.  
- 
+  <footer class="site-footer" role="contentinfo">
+    <p>Hosted by the family • Designed with a botanical theme.</p>
+  </footer>
 
-🌿 ♡ 🌿  
-With love and gratitude,  
-Karl & Jacqueline
+  <script src="js/main.js" defer></script>
+</body>
+</html>
