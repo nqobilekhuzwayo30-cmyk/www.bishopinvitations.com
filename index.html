@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Karl & Jacqueline 25th Anniversary Celebration invitation with RSVP and venue details." />
+  <meta name="description" content="Karl & Jacqueline 25th Anniversary Celebration invitation." />
   <title>Karl & Jacqueline - 25th Anniversary Celebration</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,53 +244,6 @@
       border:0;
     }
 
-    form{
-      display:grid;
-      gap:.9rem;
-    }
-
-    .form-grid{
-      display:grid;
-      gap:.9rem;
-    }
-
-    label{
-      display:block;
-      margin-bottom:.35rem;
-      font-size:.92rem;
-    }
-
-    input, textarea, select{
-      width:100%;
-      font:inherit;
-      border:1px solid rgba(29,58,43,.18);
-      border-radius:12px;
-      padding:.8rem .9rem;
-      background:#fff;
-      color:var(--green);
-    }
-
-    textarea{min-height:120px;resize:vertical}
-
-    .help{
-      color:var(--silver);
-      font-size:.88rem;
-      margin:.2rem 0 0;
-    }
-
-    .form-actions{
-      display:flex;
-      gap:.75rem;
-      flex-wrap:wrap;
-      margin-top:.25rem;
-    }
-
-    .status{
-      min-height:1.5em;
-      color:var(--silver);
-      font-size:.95rem;
-    }
-
     .note{
       color:var(--silver);
       font-size:.95rem;
@@ -327,7 +280,6 @@
       <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
       <ul id="menu">
         <li><a href="#details">Details</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
         <li><a href="#registry">Registry</a></li>
       </ul>
     </nav>
@@ -340,11 +292,9 @@
         <div>
           <p class="eyebrow">~ ♡ ~</p>
           <h1 id="title">25 Wonderful Years of Marriage</h1>
-          <p>Together with grateful hearts, we joyfully celebrate 25 wonderful years of marriage, thanking Jehovah for His abundant love, guidance, and countless blessings throughout our journey.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#rsvp">RSVP Now</a>
-            <a class="btn secondary" href="#details">View Details</a>
-          </div>
+          <p>Twenty-Five Years of Love<br>~ ♡ ~<br>Karl & Jacqueline<br>Our Love Story Continues...</p>
+          <p>Together with grateful hearts, we joyfully celebrate 25 Wonderful Years of Marriage, thanking Jehovah for His abundant love, guidance, and countless blessings throughout our journey.</p>
+          <p>We would be honoured if you would join us as we celebrate this precious milestone.</p>
         </div>
       </section>
 
@@ -373,10 +323,10 @@
             </div>
 
             <div class="card">
-              <h3 style="margin-bottom:.8rem;">Schedule</h3>
-              <div class="detail">
-                <strong>Guests to be seated</strong>
-              </div>
+              <h3 style="margin-bottom:.8rem;">Dress Code</h3>
+              <p><strong>Brilliantly Elegant</strong></p>
+              <p>Come celebrate with us in your favorite shade starting with a “B”.</p>
+              <p>Brown, Beige, Black, Blue, Bronze, Blush, Burgundy</p>
             </div>
           </div>
 
@@ -394,60 +344,6 @@
               </iframe>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="rsvp">
-        <div class="content">
-          <h2 class="section-title">RSVP</h2>
-          <div class="card" style="margin-bottom:1rem;">
-            <strong>RSVP BY 12 AUGUST 2026</strong>
-            <p style="margin:.4rem 0 0;">Jacqueline<br>083 289 6775</p>
-          </div>
-          <form id="rsvpForm" novalidate>
-            <div class="grid two">
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email address</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-            </div>
-
-            <div class="grid two">
-              <div>
-                <label for="phone">Phone number</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" />
-              </div>
-              <div>
-                <label for="guests">Number of guests</label>
-                <input id="guests" name="guests" type="number" min="1" max="10" value="1" required />
-              </div>
-            </div>
-
-            <div>
-              <label for="attendance">Attendance</label>
-              <select id="attendance" name="attendance" required>
-                <option value="">Select one</option>
-                <option>Will attend</option>
-                <option>Will not attend</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message">Message / dietary notes</label>
-              <textarea id="message" name="message" placeholder="Optional"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn primary" type="submit">Submit RSVP</button>
-              <button class="btn secondary" type="button" id="downloadCsv">Download CSV</button>
-            </div>
-
-            <div class="status" id="status" aria-live="polite"></div>
-          </form>
         </div>
       </section>
 
@@ -473,76 +369,5 @@
   <footer>
     <p>🌿 ♡ 🌿</p>
   </footer>
-
-  <script>
-    const nav = document.getElementById('nav');
-    const menuBtn = document.getElementById('menuBtn');
-    const form = document.getElementById('rsvpForm');
-    const status = document.getElementById('status');
-    const downloadCsv = document.getElementById('downloadCsv');
-    const entries = [];
-
-    menuBtn?.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-
-    document.querySelectorAll('#menu a, .cta-row a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuBtn?.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    function validEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function toCSV(rows) {
-      const head = ['timestamp','name','email','phone','guests','attendance','message'];
-      const lines = [head.join(',')];
-      rows.forEach(row => {
-        lines.push(head.map(k => `"${String(row[k] ?? '').replace(/"/g,'""')}"`).join(','));
-      });
-      return lines.join('\n');
-    }
-
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = {
-        timestamp: new Date().toISOString(),
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        guests: form.guests.value.trim(),
-        attendance: form.attendance.value.trim(),
-        message: form.message.value.trim()
-      };
-
-      if (!data.name) return status.textContent = 'Please enter your full name.';
-      if (!validEmail(data.email)) return status.textContent = 'Please enter a valid email address.';
-      if (!data.guests || Number(data.guests) < 1) return status.textContent = 'Please enter at least 1 guest.';
-      if (!data.attendance) return status.textContent = 'Please select attendance.';
-      entries.push(data);
-      status.textContent = 'RSVP saved successfully.';
-      form.reset();
-      form.guests.value = 1;
-    });
-
-    downloadCsv?.addEventListener('click', () => {
-      if (!entries.length) {
-        status.textContent = 'No RSVP entries yet.';
-        return;
-      }
-      const blob = new Blob([toCSV(entries)], { type: 'text/csv;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'rsvp-responses.csv';
-      a.click();
-      URL.revokeObjectURL(url);
-      status.textContent = 'CSV downloaded.';
-    });
-  </script>
 </body>
 </html>
