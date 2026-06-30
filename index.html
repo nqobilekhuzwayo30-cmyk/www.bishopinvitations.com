@@ -2,22 +2,350 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="robots" content="noindex,nofollow" />
-  <title>25 Wonderful Years — Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="25 Wonderful Years of Marriage invitation with RSVP and venue details." />
+  <title>25 Wonderful Years of Marriage</title>
 
-  <!-- Google Fonts: Cinzel (serif) & Great Vibes (script) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet"> <!-- usage reference: font usage patterns [web:8][web:5] -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    :root{
+      --cream:#FDFBF7;
+      --green:#1D3A2B;
+      --silver:#7F8C8D;
+      --card:rgba(255,255,255,.78);
+      --shadow:0 10px 30px rgba(29,58,43,.08);
+      --radius:18px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--green);
+      font-family:"Cinzel", serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    img,iframe{max-width:100%;display:block}
+    .skip{
+      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip:focus{
+      left:1rem;top:1rem;width:auto;height:auto;padding:.75rem 1rem;background:var(--green);color:var(--cream);z-index:9999;border-radius:10px;
+    }
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(253,251,247,.9);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(29,58,43,.08);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:.85rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand{
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.08em;
+      white-space:nowrap;
+    }
+
+    .nav button{
+      border:1px solid var(--green);
+      background:transparent;
+      color:var(--green);
+      border-radius:10px;
+      padding:.55rem .8rem;
+      font:inherit;
+    }
+
+    .nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:none;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      text-decoration:none;
+      font-size:.95rem;
+    }
+
+    .nav.open ul{display:flex}
+
+    .hero-wrap{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .botanical{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.16;
+      background:
+        radial-gradient(circle at top left, rgba(29,58,43,.28), transparent 22%),
+        radial-gradient(circle at top right, rgba(29,58,43,.18), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(127,140,141,.18), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(29,58,43,.22), transparent 22%);
+      z-index:0;
+    }
+
+    main{
+      position:relative;
+      z-index:1;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:1rem;
+    }
+
+    section{
+      margin:1rem 0 1.25rem;
+      background:var(--card);
+      border:1px solid rgba(29,58,43,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      min-height:72vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:2rem 1rem;
+    }
+
+    .eyebrow{
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(1.5rem, 4vw, 2.6rem);
+      margin:0 0 .35rem;
+      color:var(--silver);
+    }
+
+    h1, h2, h3{
+      margin:0;
+      line-height:1.15;
+    }
+
+    h1{
+      font-size:clamp(2rem, 7vw, 4.8rem);
+      letter-spacing:.02em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      max-width:40rem;
+      margin:1rem auto 0;
+      font-size:1rem;
+      color:var(--silver);
+    }
+
+    .cta-row{
+      margin-top:1.35rem;
+      display:flex;
+      gap:.75rem;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border-radius:999px;
+      padding:.8rem 1.1rem;
+      border:1px solid var(--green);
+      font-size:.95rem;
+    }
+
+    .btn.primary{
+      background:var(--green);
+      color:var(--cream);
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:var(--green);
+    }
+
+    .content{
+      padding:1rem;
+    }
+
+    .section-title{
+      font-size:clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom:1rem;
+    }
+
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(29,58,43,.07);
+      border-radius:16px;
+      padding:1rem;
+    }
+
+    .details-grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .detail{
+      display:grid;
+      gap:.35rem;
+    }
+
+    .detail .label{
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      color:var(--silver);
+    }
+
+    .schedule{
+      display:grid;
+      gap:.75rem;
+    }
+
+    .schedule-item{
+      display:flex;
+      gap:1rem;
+      align-items:flex-start;
+      padding-bottom:.75rem;
+      border-bottom:1px solid rgba(29,58,43,.08);
+    }
+
+    .schedule-item:last-child{border-bottom:none;padding-bottom:0}
+    .time{
+      min-width:78px;
+      font-weight:700;
+      color:var(--green);
+    }
+
+    .map-wrap{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(29,58,43,.08);
+      background:#fff;
+    }
+
+    .map-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    form{
+      display:grid;
+      gap:.9rem;
+    }
+
+    .form-grid{
+      display:grid;
+      gap:.9rem;
+    }
+
+    label{
+      display:block;
+      margin-bottom:.35rem;
+      font-size:.92rem;
+    }
+
+    input, textarea, select{
+      width:100%;
+      font:inherit;
+      border:1px solid rgba(29,58,43,.18);
+      border-radius:12px;
+      padding:.8rem .9rem;
+      background:#fff;
+      color:var(--green);
+    }
+
+    textarea{min-height:120px;resize:vertical}
+
+    .help{
+      color:var(--silver);
+      font-size:.88rem;
+      margin:.2rem 0 0;
+    }
+
+    .form-actions{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:.25rem;
+    }
+
+    .status{
+      min-height:1.5em;
+      color:var(--silver);
+      font-size:.95rem;
+    }
+
+    .note{
+      color:var(--silver);
+      font-size:.95rem;
+    }
+
+    footer{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 1rem 2rem;
+      text-align:center;
+      color:var(--silver);
+      font-size:.9rem;
+    }
+
+    @media (min-width: 760px){
+      .nav button{display:none}
+      .nav ul{display:flex}
+      .content{padding:1.25rem 1.25rem 1.4rem}
+      .details-grid{
+        grid-template-columns:1.1fr .9fr;
+      }
+      .grid.two{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="nav-logo" href="#hero">25 Years</a>
-      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a href="#hero">Home</a></li>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="nav" id="nav">
+      <a class="brand" href="#hero">25 YEARS</a>
+      <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
+      <ul id="menu">
         <li><a href="#details">Details</a></li>
         <li><a href="#rsvp">RSVP</a></li>
         <li><a href="#registry">Registry</a></li>
@@ -25,102 +353,221 @@
     </nav>
   </header>
 
-  <!-- Botanical frame background (SVG overlay) -->
-  <div class="frame" aria-hidden="true">
-    <img src="assets/frame.svg" alt="" class="frame-img" />
-  </div>
-
-  <main id="main" class="container">
-    <!-- Hero: primary H1 -->
-    <section id="hero" class="hero" role="region" aria-labelledby="hero-heading">
-      <div class="hero-inner">
-        <h1 id="hero-heading" class="hero-title">25 Wonderful Years of Marriage</h1>
-        <p class="hero-sub">Join us to celebrate twenty-five years of love, commitment, and faith.</p>
-        <a class="cta" href="#rsvp">RSVP</a>
-      </div>
-    </section>
-
-    <!-- Details block (grid layout) -->
-    <section id="details" class="details" aria-labelledby="details-heading">
-      <h2 id="details-heading">Event Details</h2>
-      <div class="details-grid">
-        <div class="card">
-          <h3>When</h3>
-          <p>Saturday, 12 December 2026 — Ceremony 3:00 PM; Guests to be seated by 2:45 PM.</p>
-        </div>
-        <div class="card">
-          <h3>Where</h3>
-          <p>Eagle Canyon Clubhouse — <a id="directions-link" href="#" target="_blank" rel="noopener">Get directions</a>.</p>
-          <!-- Embedded map -->
-          <div class="map-wrap" aria-hidden="false">
-            <!-- Use Maps Embed (replace PLACE_ID or query to exact address) -->
-            <iframe
-              title="Eagle Canyon Clubhouse map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...REPLACE_WITH_EMBED..."
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              class="map-iframe"></iframe>
+  <div class="hero-wrap">
+    <div class="botanical" aria-hidden="true"></div>
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="title">
+        <div>
+          <p class="eyebrow">With gratitude and joy</p>
+          <h1 id="title">25 Wonderful Years of Marriage</h1>
+          <p>Join us as we celebrate a beautiful milestone with family and friends.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#rsvp">RSVP Now</a>
+            <a class="btn secondary" href="#details">View Details</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- RSVP module -->
-    <section id="rsvp" class="rsvp" aria-labelledby="rsvp-heading">
-      <h2 id="rsvp-heading">RSVP</h2>
-      <form id="rsvp-form" class="rsvp-form" novalidate>
-        <div class="form-row">
-          <label for="fullName">Full name</label>
-          <input id="fullName" name="fullName" type="text" required aria-required="true" />
+      <section id="details">
+        <div class="content">
+          <h2 class="section-title">Event Details</h2>
+          <div class="details-grid">
+            <div class="card">
+              <div class="detail">
+                <span class="label">Date</span>
+                <strong>Saturday, 12 December 2026</strong>
+              </div>
+              <div class="detail" style="margin-top:1rem;">
+                <span class="label">Time</span>
+                <strong>Ceremony: 3:00 PM</strong>
+                <span>Guests to be seated by 2:45 PM.</span>
+              </div>
+              <div class="detail" style="margin-top:1rem;">
+                <span class="label">Venue</span>
+                <strong>Eagle Canyon Clubhouse</strong>
+                <span class="note">Directions link and map included below.</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom:.8rem;">Schedule</h3>
+              <div class="schedule">
+                <div class="schedule-item">
+                  <div class="time">2:45 PM</div>
+                  <div>Guests to be seated.</div>
+                </div>
+                <div class="schedule-item">
+                  <div class="time">3:00 PM</div>
+                  <div>Ceremony begins.</div>
+                </div>
+                <div class="schedule-item">
+                  <div class="time">4:00 PM</div>
+                  <div>Reception and celebration.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;" class="card">
+            <h3 style="margin-bottom:.8rem;">Location</h3>
+            <p class="note">Use the map for quick navigation or open directions on your phone.</p>
+            <p>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
+            </p>
+            <div class="map-wrap" aria-label="Map to Eagle Canyon Clubhouse">
+              <iframe
+                title="Eagle Canyon Clubhouse map"
+                loading="lazy"
+                src="https://www.google.com/maps?q=Eagle%20Canyon%20Clubhouse&output=embed">
+              </iframe>
+            </div>
+          </div>
         </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required aria-required="true" />
+      </section>
+
+      <section id="rsvp">
+        <div class="content">
+          <h2 class="section-title">RSVP</h2>
+          <form id="rsvpForm" novalidate>
+            <div class="grid two">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="grid two">
+              <div>
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+              <div>
+                <label for="guests">Number of guests</label>
+                <input id="guests" name="guests" type="number" min="1" max="10" value="1" required />
+              </div>
+            </div>
+
+            <div>
+              <label for="attendance">Attendance</label>
+              <select id="attendance" name="attendance" required>
+                <option value="">Select one</option>
+                <option>Will attend</option>
+                <option>Will not attend</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Message / dietary notes</label>
+              <textarea id="message" name="message" placeholder="Optional"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Submit RSVP</button>
+              <button class="btn secondary" type="button" id="downloadCsv">Download CSV</button>
+            </div>
+
+            <div class="status" id="status" aria-live="polite"></div>
+            <p class="help">This form is prepared for backend export later; for now it stores entries locally in the browser and can download a CSV file.</p>
+          </form>
         </div>
-        <div class="form-row">
-          <label for="phone">Phone (optional)</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+27..." />
+      </section>
+
+      <section id="registry">
+        <div class="content">
+          <h2 class="section-title">Registry & Gift Guidance</h2>
+          <div class="grid two">
+            <div class="card">
+              <h3>Card Box</h3>
+              <p>A card box will be available at the venue for guests who wish to leave a card.</p>
+            </div>
+            <div class="card">
+              <h3>Gift Note</h3>
+              <p>Your presence is the greatest gift. If you would like to give something, a card or contribution is welcome.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:1rem;">Privacy note: this page is marked no-index so family details stay private.</p>
         </div>
-        <div class="form-row">
-          <label for="guests">Number of guests</label>
-          <input id="guests" name="guests" type="number" min="1" max="10" value="1" required aria-required="true" />
-        </div>
-        <div class="form-row">
-          <label for="message">Message (dietary / accessibility)</label>
-          <textarea id="message" name="message" rows="3"></textarea>
-        </div>
+      </section>
+    </main>
+  </div>
 
-        <div class="form-actions">
-          <button type="submit" class="btn-primary">Send RSVP</button>
-          <button type="button" id="export-csv" class="btn-secondary">Export CSV</button>
-        </div>
-
-        <div id="form-status" class="status" role="status" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <!-- Registry / gift section -->
-    <section id="registry" class="registry" aria-labelledby="registry-heading">
-      <h2 id="registry-heading">Registry & Gift Guidance</h2>
-      <p class="registry-intro">Your presence is the present. If you ask about gifts, a card box will be available at the venue.</p>
-
-      <div class="card-box">
-        <h3>Card Box</h3>
-        <p>For guests who wish to give a card or contribution, the Card Box will be placed at the venue entrance; contact email available on RSVP confirmation.</p>
-      </div>
-
-      <div class="privacy-note" aria-hidden="false">
-        <p>This page is set to no-index for privacy; family details are not published to search engines.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <p>Hosted by the family • Designed with a botanical theme.</p>
+  <footer>
+    <p>Designed with love and a minimalist botanical aesthetic.</p>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    const form = document.getElementById('rsvpForm');
+    const status = document.getElementById('status');
+    const downloadCsv = document.getElementById('downloadCsv');
+    const entries = [];
+
+    menuBtn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    document.querySelectorAll('#menu a, .cta-row a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    function validEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function toCSV(rows) {
+      const head = ['timestamp','name','email','phone','guests','attendance','message'];
+      const lines = [head.join(',')];
+      rows.forEach(row => {
+        lines.push(head.map(k => `"${String(row[k] ?? '').replace(/"/g,'""')}"`).join(','));
+      });
+      return lines.join('\n');
+    }
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = {
+        timestamp: new Date().toISOString(),
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        guests: form.guests.value.trim(),
+        attendance: form.attendance.value.trim(),
+        message: form.message.value.trim()
+      };
+
+      if (!data.name) return status.textContent = 'Please enter your full name.';
+      if (!validEmail(data.email)) return status.textContent = 'Please enter a valid email address.';
+      if (!data.guests || Number(data.guests) < 1) return status.textContent = 'Please enter at least 1 guest.';
+      if (!data.attendance) return status.textContent = 'Please select attendance.';
+      entries.push(data);
+      status.textContent = 'RSVP saved successfully.';
+      form.reset();
+      form.guests.value = 1;
+    });
+
+    downloadCsv?.addEventListener('click', () => {
+      if (!entries.length) {
+        status.textContent = 'No RSVP entries yet.';
+        return;
+      }
+      const blob = new Blob([toCSV(entries)], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'rsvp-responses.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+      status.textContent = 'CSV downloaded.';
+    });
+  </script>
 </body>
 </html>
