@@ -15,8 +15,7 @@
       --cream:#FDFBF7;
       --green:#1D3A2B;
       --silver:#7F8C8D;
-      --card:rgba(255,255,255,.80);
-      --overlay:rgba(20,30,24,.38);
+      --card:rgba(255,255,255,.82);
       --shadow:0 10px 30px rgba(29,58,43,.08);
       --radius:18px;
       --max:1100px;
@@ -123,6 +122,19 @@
       overflow:hidden;
     }
 
+    .botanical{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.16;
+      background:
+        radial-gradient(circle at top left, rgba(29,58,43,.28), transparent 22%),
+        radial-gradient(circle at top right, rgba(29,58,43,.18), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(127,140,141,.18), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(29,58,43,.22), transparent 22%);
+      z-index:0;
+    }
+
     main{
       position:relative;
       z-index:1;
@@ -138,28 +150,6 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       overflow:hidden;
-      position:relative;
-    }
-
-    .section-bg{
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-    }
-
-    .section-bg::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:var(--overlay);
-      z-index:0;
-    }
-
-    .section-inner{
-      position:relative;
-      z-index:1;
-      padding:1rem;
-      text-align:center;
     }
 
     .hero{
@@ -174,8 +164,7 @@
       font-family:"Great Vibes", cursive;
       font-size:clamp(1.5rem, 4vw, 2.6rem);
       margin:0 0 .35rem;
-      color:var(--cream);
-      text-shadow:0 2px 10px rgba(0,0,0,.25);
+      color:var(--silver);
     }
 
     h1, h2, h3{
@@ -187,16 +176,13 @@
       font-size:clamp(2rem, 7vw, 4.8rem);
       letter-spacing:.02em;
       text-wrap:balance;
-      color:var(--cream);
-      text-shadow:0 2px 12px rgba(0,0,0,.30);
     }
 
     .hero p{
       max-width:44rem;
       margin:1rem auto 0;
       font-size:1rem;
-      color:var(--cream);
-      text-shadow:0 1px 8px rgba(0,0,0,.25);
+      color:var(--silver);
     }
 
     .content{
@@ -208,8 +194,6 @@
       font-size:clamp(1.5rem, 4vw, 2.2rem);
       margin-bottom:1rem;
       text-align:center;
-      color:var(--cream);
-      text-shadow:0 2px 10px rgba(0,0,0,.20);
     }
 
     .grid{
@@ -219,34 +203,30 @@
 
     .card{
       position:relative;
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(29,58,43,.07);
-      border-radius:16px;
-      overflow:hidden;
       min-height:260px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      padding:1rem;
-      text-align:center;
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
+      border:1px solid rgba(29,58,43,.07);
+      border-radius:16px;
+      overflow:hidden;
+      padding:1rem;
+      text-align:center;
+      display:flex;
+      align-items:flex-end;
     }
 
     .card::before{
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(18,28,22,.42);
-      z-index:0;
+      background:rgba(255,255,255,.58);
+      backdrop-filter:blur(2px);
     }
 
-    .card-content{
+    .card > *{
       position:relative;
       z-index:1;
-      color:var(--cream);
-      width:100%;
     }
 
     .details-grid{
@@ -264,8 +244,7 @@
       text-transform:uppercase;
       letter-spacing:.12em;
       font-size:.78rem;
-      color:var(--cream);
-      opacity:.92;
+      color:var(--silver);
     }
 
     .map-wrap{
@@ -276,7 +255,6 @@
       overflow:hidden;
       border:1px solid rgba(29,58,43,.08);
       background:#fff;
-      margin-top:1rem;
     }
 
     .map-wrap iframe{
@@ -288,23 +266,14 @@
     }
 
     .note{
-      color:var(--cream);
+      color:var(--silver);
       font-size:.95rem;
-      text-shadow:0 1px 8px rgba(0,0,0,.22);
     }
 
-    .plain-card{
-      background:rgba(255,255,255,.82);
-      color:var(--green);
-      border:1px solid rgba(29,58,43,.07);
-      border-radius:16px;
-      padding:1rem;
-    }
-
-    .plain-card p, .plain-card a, .plain-card strong{
-      color:var(--green);
-      text-shadow:none;
-    }
+    .img-card-1{background-image:url("images/1.png");}
+    .img-card-2{background-image:url("images/2.jpeg");}
+    .img-card-3{background-image:url("images/3.webp");}
+    .img-card-4{background-image:url("images/4.jpg");}
 
     footer{
       max-width:var(--max);
@@ -314,12 +283,6 @@
       color:var(--silver);
       font-size:.9rem;
     }
-
-    .hero-bg{background-image:url("./images/1.jpg");}
-    .details-bg{background-image:url("./images/2.jpg");}
-    .location-bg{background-image:url("./images/3.jpg");}
-    .gifts-bg{background-image:url("./images/4.jpg");}
-    .thanks-bg{background-image:url("./images/1.jpg");}
 
     @media (min-width: 760px){
       .nav{
@@ -336,7 +299,7 @@
         width:auto;
       }
 
-      .section-inner{padding:1.25rem}
+      .content{padding:1.25rem 1.25rem 1.4rem}
       .details-grid{
         grid-template-columns:1.1fr .9fr;
       }
@@ -347,7 +310,10 @@
         min-height:72vh;
       }
       .card{
-        min-height:300px;
+        text-align:left;
+      }
+      .detail{
+        justify-items:start;
       }
     }
 
@@ -365,12 +331,11 @@
         padding:1.6rem 1rem;
       }
 
-      .section-inner{
+      .content{
         padding:.95rem;
       }
 
       .card{
-        min-height:230px;
         padding:.95rem;
       }
     }
@@ -387,15 +352,15 @@
         <li><a href="#details">Details</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="#registry">Gifts</a></li>
-        <li><a href="#thanks">Thank You</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="hero-wrap">
+    <div class="botanical" aria-hidden="true"></div>
     <main id="main">
-      <section class="hero section-bg hero-bg" id="hero" aria-labelledby="title">
-        <div class="section-inner">
+      <section class="hero" id="hero" aria-labelledby="title">
+        <div>
           <p class="eyebrow">~ ♡ ~</p>
           <h1 id="title">25 Wonderful Years of Marriage</h1>
           <p>Twenty-Five Years of Love<br>~ ♡ ~<br>Our Love Story Continues...</p>
@@ -404,43 +369,46 @@
         </div>
       </section>
 
-      <section id="details" class="section-bg details-bg">
-        <div class="section-inner">
+      <section id="details">
+        <div class="content">
           <h2 class="section-title">Event Details</h2>
           <div class="details-grid">
-            <div class="card">
-              <div class="card-content">
-                <div class="detail">
-                  <span class="label">Celebration</span>
-                  <strong>Karl & Jacqueline - 25th Anniversary Celebration</strong>
-                </div>
-                <div class="detail" style="margin-top:1rem;">
-                  <span class="label">Date</span>
-                  <strong>Saturday, 29 August 2026</strong>
-                </div>
-                <div class="detail" style="margin-top:1rem;">
-                  <span class="label">Time</span>
-                  <strong>6:00 pm</strong>
-                </div>
+            <div class="card img-card-1">
+              <div class="detail">
+                <span class="label">Celebration</span>
+                <strong>Karl & Jacqueline - 25th Anniversary Celebration</strong>
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-content">
-                <h3 style="margin-bottom:.8rem;">Dress Code</h3>
-                <p><strong>Brilliantly Elegant</strong></p>
-                <p>Come celebrate with us in your favorite shade starting with a “B”.</p>
-                <p>Brown, Beige, Black, Blue, Bronze, Blush, Burgundy</p>
+            <div class="card img-card-2">
+              <div class="detail">
+                <span class="label">Date</span>
+                <strong>Saturday, 29 August 2026</strong>
+              </div>
+            </div>
+
+            <div class="card img-card-3">
+              <div class="detail">
+                <span class="label">Time</span>
+                <strong>6:00 pm</strong>
+              </div>
+            </div>
+
+            <div class="card img-card-4">
+              <div class="detail">
+                <span class="label">Dress Code</span>
+                <strong>Brilliantly Elegant</strong>
+                <p>Come celebrate with us in your favorite shade starting with a “B”. Brown, Beige, Black, Blue, Bronze, Blush, Burgundy.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="location" class="section-bg location-bg">
-        <div class="section-inner">
+      <section id="location">
+        <div class="content">
           <h2 class="section-title">Location</h2>
-          <div class="plain-card">
+          <div class="card">
             <p><strong>Eagle Canyon Clubhouse</strong><br>Randpark Ridge, South Africa</p>
             <p>
               <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
@@ -456,25 +424,13 @@
         </div>
       </section>
 
-      <section id="registry" class="section-bg gifts-bg">
-        <div class="section-inner">
+      <section id="registry">
+        <div class="content">
           <h2 class="section-title">Gifts</h2>
           <div class="card">
-            <div class="card-content">
-              <p>Your presence is our greatest gift. However, if you would like to honour us with a gift, a card box will be available for contributions towards our next adventure together.</p>
-            </div>
+            <p>Your presence is our greatest gift. However, if you would like to honour us with a gift, a card box will be available for contributions towards our next adventure together.</p>
           </div>
-        </div>
-      </section>
-
-      <section id="thanks" class="section-bg thanks-bg">
-        <div class="section-inner">
-          <h2 class="section-title">Thank You</h2>
-          <div class="card">
-            <div class="card-content">
-              <p>Thank you for celebrating this special day with us. Your love, presence, and prayers mean so much to our family.</p>
-            </div>
-          </div>
+          <p class="note" style="margin-top:1rem;"></p>
         </div>
       </section>
     </main>
@@ -487,6 +443,7 @@
   <script>
     const nav = document.getElementById('nav');
     const menuBtn = document.getElementById('menuBtn');
+
     menuBtn?.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', String(open));
