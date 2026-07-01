@@ -272,6 +272,7 @@
       overflow:hidden;
       border:1px solid rgba(29,58,43,.08);
       background:#fff;
+      margin:0 auto;
     }
 
     .map-wrap iframe{
@@ -292,6 +293,19 @@
     .location-section{background-image:url("images/3.jpg");}
     .registry-section{background-image:url("images/8.png");}
     .thanks-section{background-image:url("images/4.png");}
+
+    #location .content,
+    #location .card,
+    #location .card p,
+    #location .card a {
+      text-align: center;
+    }
+
+    #location .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     footer{
       max-width:var(--max);
