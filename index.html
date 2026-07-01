@@ -308,36 +308,35 @@
     }
 
     #thanks .content,
-    #thanks .card {
+    #thanks .card,
+    #thanks .card p {
       text-align: center;
     }
 
     #thanks .card {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 260px;
     }
 
-    .thank-image {
+    #thanks .thanks-image {
       width: min(220px, 60vw);
       height: auto;
-      margin: 1rem auto 1rem;
+      margin: 0 auto 1rem;
       display: block;
-      animation: thankFloat 4s ease-in-out infinite, thankGlow 3s ease-in-out infinite;
+      animation: floatPulse 3.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 18px rgba(29,58,43,.18));
       transform-origin: center;
-      filter: drop-shadow(0 10px 20px rgba(29,58,43,.18));
     }
 
-    @keyframes thankFloat {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-10px) scale(1.04); }
-    }
-
-    @keyframes thankGlow {
-      0%, 100% { filter: drop-shadow(0 10px 20px rgba(29,58,43,.18)) brightness(1); }
-      50% { filter: drop-shadow(0 16px 28px rgba(29,58,43,.26)) brightness(1.06); }
+    @keyframes floatPulse {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.04) rotate(1deg);
+      }
     }
 
     footer{
@@ -484,7 +483,7 @@
         <div class="content">
           <h2 class="section-title">Thank You</h2>
           <div class="card">
-            <img class="thank-image" src="images/10.png" alt="Thank you decoration" />
+            <img class="thanks-image" src="images/10.png" alt="Thank you decoration">
             <p>Thank you for being part of this beautiful celebration and for sharing in our joy.</p>
           </div>
         </div>
