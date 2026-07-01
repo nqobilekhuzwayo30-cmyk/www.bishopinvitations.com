@@ -1,513 +1,167 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Karl & Jacqueline 25th Anniversary Celebration invitation." />
-  <title>Karl & Jacqueline - 25th Anniversary Celebration</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karl & Jacqueline - 25th Anniversary</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --cream:#FDFBF7;
-      --green:#0F2A1F;
-      --silver:#4F6458;
-      --card:rgba(255,255,255,.82);
-      --shadow:0 10px 30px rgba(15,42,31,.08);
-      --radius:18px;
-      --max:1100px;
-    }
+<style>
+:root{
+  --cream:#FDFBF7;
+  --green:#0F2A1F;
+  --silver:#4F6458;
+}
 
-    *{box-sizing:border-box}
-    html{
-      scroll-behavior:smooth;
-      min-height:100%;
-    }
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Cinzel",serif;
+  color:var(--green);
+  background:url("images/5.jpg") center/cover no-repeat;
+}
 
-    body{
-      margin:0;
-      min-height:100vh;
-      position:relative;
-      background:url("images/5.jpg") center/cover no-repeat fixed;
-      color:var(--green);
-      font-family:"Cinzel", serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.7;
-      overflow-x:hidden;
-    }
+/* overlay so text always visible */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(255,255,255,0.65);
+  z-index:-1;
+}
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:rgba(253,251,247,.34);
-      z-index:0;
-      pointer-events:none;
-    }
+/* NAV */
+header{
+  position:sticky;
+  top:0;
+  background:rgba(253,251,247,0.95);
+  border-bottom:1px solid #ddd;
+  z-index:10;
+}
 
-    a{color:inherit}
-    img,iframe{max-width:100%;display:block}
+.nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-    h1, h2, h3, p, a, strong, .label {
-      text-shadow: 0 1px 3px rgba(0,0,0,.12);
-    }
+.nav a{
+  text-decoration:none;
+  color:var(--green);
+}
 
-    .skip{
-      position:absolute;
-      left:-9999px;
-      top:auto;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+}
 
-    .skip:focus{
-      left:1rem;
-      top:1rem;
-      width:auto;
-      height:auto;
-      padding:.75rem 1rem;
-      background:var(--green);
-      color:var(--cream);
-      z-index:9999;
-      border-radius:10px;
-    }
+h1{
+  font-size:clamp(28px,6vw,60px);
+  margin:10px 0;
+}
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(253,251,247,.94);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(15,42,31,.08);
-    }
+.eyebrow{
+  font-family:"Great Vibes",cursive;
+  font-size:30px;
+  color:var(--silver);
+}
 
-    .nav{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:.85rem 1rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:1rem;
-      flex-wrap:wrap;
-      text-align:center;
-      position:relative;
-      z-index:2;
-    }
+.card{
+  background:rgba(255,255,255,0.9);
+  margin:20px auto;
+  padding:20px;
+  max-width:900px;
+  border-radius:15px;
+  border:1px solid #ddd;
+}
 
-    .brand{
-      text-decoration:none;
-      font-weight:700;
-      letter-spacing:.05em;
-      font-size:.95rem;
-      text-align:center;
-      width:100%;
-    }
+/* image */
+img{
+  max-width:100%;
+  border-radius:10px;
+}
 
-    .nav button{
-      border:1px solid var(--green);
-      background:transparent;
-      color:var(--green);
-      border-radius:10px;
-      padding:.55rem .9rem;
-      font:inherit;
-      margin:0 auto;
-      display:block;
-    }
+/* sections */
+section{
+  padding:20px;
+}
 
-    .nav ul{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:none;
-      gap:1rem;
-      flex-wrap:wrap;
-      justify-content:center;
-      width:100%;
-    }
+h2{
+  text-align:center;
+}
 
-    .nav a{
-      text-decoration:none;
-      font-size:.95rem;
-    }
-
-    .nav.open ul{display:flex}
-
-    .hero-wrap{
-      position:relative;
-      z-index:1;
-      overflow:hidden;
-    }
-
-    .botanical{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      opacity:.10;
-      background:
-        radial-gradient(circle at top left, rgba(15,42,31,.18), transparent 22%),
-        radial-gradient(circle at top right, rgba(15,42,31,.12), transparent 22%),
-        radial-gradient(circle at bottom left, rgba(79,100,88,.12), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(15,42,31,.15), transparent 22%);
-      z-index:0;
-    }
-
-    main{
-      position:relative;
-      z-index:1;
-      max-width:var(--max);
-      margin:0 auto;
-      padding:1rem;
-    }
-
-    section{
-      margin:1rem 0 1.25rem;
-      background:var(--card);
-      border:1px solid rgba(15,42,31,.06);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      z-index:1;
-    }
-
-    section::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(255,255,255,.25);
-      z-index:0;
-      pointer-events:none;
-    }
-
-    section > *{
-      position:relative;
-      z-index:1;
-    }
-
-    .hero{
-      min-height:68vh;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:2rem 1rem;
-    }
-
-    .eyebrow{
-      font-family:"Great Vibes", cursive;
-      font-size:clamp(1.5rem, 4vw, 2.6rem);
-      margin:0 0 .35rem;
-      color:var(--silver);
-    }
-
-    h1, h2, h3{
-      margin:0;
-      line-height:1.15;
-    }
-
-    h1{
-      font-size:clamp(2rem, 7vw, 4.8rem);
-      letter-spacing:.02em;
-      text-wrap:balance;
-    }
-
-    .content{
-      padding:1rem;
-      text-align:center;
-    }
-
-    .section-title{
-      font-size:clamp(1.5rem, 4vw, 2.2rem);
-      margin-bottom:1rem;
-      text-align:center;
-    }
-
-    .card{
-      position:relative;
-      border:1px solid rgba(15,42,31,.07);
-      border-radius:16px;
-      padding:1rem;
-      text-align:center;
-      overflow:hidden;
-      min-height:220px;
-      display:flex;
-      align-items:flex-end;
-      background: rgba(255,255,255,.88);
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      backdrop-filter: blur(8px);
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(255,255,255,.45);
-      z-index:0;
-      pointer-events:none;
-    }
-
-    .card > *{
-      position:relative;
-      z-index:1;
-    }
-
-    .details-grid{
-      display:grid;
-      gap:1rem;
-    }
-
-    .detail{
-      display:grid;
-      gap:.35rem;
-      justify-items:center;
-    }
-
-    .detail .label{
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.78rem;
-      color:var(--silver);
-    }
-
-    .map-wrap{
-      position:relative;
-      width:100%;
-      padding-top:56.25%;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(15,42,31,.08);
-      background:#fff;
-      margin:0 auto;
-    }
-
-    .map-wrap iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
-
-    .hero-message{
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(15,42,31,.10);
-      border-radius: 18px;
-      padding: 1.2rem 1rem;
-      max-width: 44rem;
-      margin: 0 auto;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 28px rgba(15,42,31,.10);
-    }
-
-    .hero-inner-card{
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(15,42,31,.10);
-      border-radius: 18px;
-      padding: 1.2rem 1rem;
-      max-width: 44rem;
-      margin: 1rem auto 0;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 28px rgba(15,42,31,.10);
-    }
-
-    .hero-card-image{
-      width: min(180px, 50vw);
-      height: auto;
-      margin: 0 auto 1rem;
-      display: block;
-      filter: drop-shadow(0 10px 18px rgba(15,42,31,.18));
-      animation: floatPulse 3.6s ease-in-out infinite;
-    }
-
-    .hero-inner-card p{
-      margin: .7rem 0;
-    }
-
-    @keyframes floatPulse {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-10px) scale(1.04) rotate(1deg); }
-    }
-
-    footer{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 1rem 2rem;
-      text-align:center;
-      color:var(--silver);
-      font-size:.9rem;
-      position:relative;
-      z-index:1;
-    }
-
-    @media (min-width: 760px){
-      .nav{
-        flex-wrap:nowrap;
-      }
-
-      .brand{
-        width:auto;
-      }
-
-      .nav button{display:none}
-      .nav ul{
-        display:flex;
-        width:auto;
-      }
-
-      .content{padding:1.25rem 1.25rem 1.4rem}
-      .details-grid{
-        grid-template-columns:1fr;
-      }
-      .hero{
-        min-height:72vh;
-      }
-      .card{
-        text-align:left;
-      }
-      .detail{
-        justify-items:start;
-      }
-    }
-
-    @media (max-width: 420px){
-      .brand{
-        white-space:normal;
-        line-height:1.2;
-      }
-
-      h1{
-        font-size:clamp(2rem, 11vw, 3.2rem);
-      }
-
-      .hero{
-        padding:1.6rem 1rem;
-      }
-
-      .content{
-        padding:.95rem;
-      }
-
-      .card{
-        padding:.95rem;
-      }
-    }
-  </style>
+/* mobile menu simple fix */
+.menu{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+</style>
 </head>
+
 <body>
-  <a class="skip" href="#main">Skip to content</a>
 
-  <header>
-    <nav class="nav" id="nav">
-      <a class="brand" href="#hero">Karl & Jacqueline - 25th Anniversary Celebration</a>
-      <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
-      <ul id="menu">
-        <li><a href="#details">Details</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#registry">Gifts</a></li>
-        <li><a href="#thanks">Thank You</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="nav">
+    <strong>Karl & Jacqueline</strong>
+  </nav>
+</header>
 
-  <div class="hero-wrap">
-    <div class="botanical" aria-hidden="true"></div>
-    <main id="main">
-      <section class="hero hero-section" id="hero" aria-labelledby="title">
-        <div class="hero-message">
-          <p class="eyebrow">~ ♡ ~</p>
-          <h1 id="title">25 Wonderful Years of Marriage</h1>
-          <div class="hero-inner-card">
-            <img class="hero-card-image" src="./images/6.jpg" alt="Decorative celebration image">
-            <p>Twenty-Five Years of Love</p>
-            <p>~ ♡ ~</p>
-            <p>Our Love Story Continues...</p>
-            <p>Together with grateful hearts, we joyfully celebrate 25 Wonderful Years of Marriage, thanking Jehovah for His abundant love, guidance, and countless blessings throughout our journey.</p>
-            <p>We would be honoured if you would join us as we celebrate this precious milestone.</p>
-          </div>
-        </div>
-      </section>
+<section class="hero">
+  <div class="eyebrow">~ ♡ ~</div>
+  <h1>25 Wonderful Years of Marriage</h1>
 
-      <section id="details" class="details-section">
-        <div class="content">
-          <h2 class="section-title">Event Details</h2>
-          <div class="details-grid">
-            <div class="card">
-              <div class="detail">
-                <span class="label">Date</span>
-                <strong>Saturday, 29 August 2026</strong>
-                <span class="label" style="margin-top:.75rem;">Time</span>
-                <strong>6:00 pm</strong>
-                <span class="label" style="margin-top:.75rem;">Dress Code</span>
-                <strong>Brilliantly Elegant</strong>
-                <p>Come celebrate with us in your favorite shade starting with a “B”. Brown, Beige, Black, Blue, Bronze, Blush, Burgundy.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="location" class="location-section">
-        <div class="content">
-          <h2 class="section-title">Location</h2>
-          <div class="card">
-            <p><strong>Eagle Canyon Clubhouse</strong><br>Randpark Ridge, South Africa</p>
-            <p>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
-            </p>
-            <div class="map-wrap" aria-label="Map to Eagle Canyon Clubhouse">
-              <iframe
-                title="Eagle Canyon Clubhouse map"
-                loading="lazy"
-                src="https://www.google.com/maps?q=Eagle%20Canyon%20Clubhouse&output=embed">
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="registry" class="registry-section">
-        <div class="content">
-          <h2 class="section-title">Gifts</h2>
-          <div class="card">
-            <p>Your presence is our greatest gift. However, if you would like to honour us with a gift, a card box will be available for contributions towards our next adventure together.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="thanks" class="thanks-section">
-        <div class="content">
-          <h2 class="section-title">Thank You</h2>
-          <div class="card">
-            <img class="thanks-image" src="./images/10.png" alt="Thank you decoration">
-            <p>Thank you for being part of this beautiful celebration and for sharing in our joy.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+  <div class="card">
+    <img src="images/6.jpg" alt="celebration">
+    <p>
+      Together with grateful hearts, we celebrate 25 wonderful years of marriage.
+    </p>
+    <p>We invite you to join us.</p>
   </div>
+</section>
 
-  <footer>
-    <p>🌿 ♡ 🌿</p>
-  </footer>
+<section>
+  <h2>Event Details</h2>
+  <div class="card">
+    <p><strong>Date:</strong> Saturday, 29 August 2026</p>
+    <p><strong>Time:</strong> 6:00 PM</p>
+    <p><strong>Dress Code:</strong> Brilliantly Elegant</p>
+  </div>
+</section>
 
-  <script>
-    const nav = document.getElementById('nav');
-    const menuBtn = document.getElementById('menuBtn');
+<section>
+  <h2>Location</h2>
+  <div class="card">
+    <p><strong>Eagle Canyon Clubhouse</strong></p>
 
-    menuBtn?.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-  </script>
+    <iframe
+      src="https://www.google.com/maps?q=Eagle+Canyon+Clubhouse&output=embed"
+      width="100%" height="300"
+      style="border:0;border-radius:10px;">
+    </iframe>
+  </div>
+</section>
+
+<section>
+  <h2>Gifts</h2>
+  <div class="card">
+    <p>Your presence is our greatest gift.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Thank You</h2>
+  <div class="card">
+    <img src="images/10.png" alt="thank you">
+    <p>Thank you for celebrating with us.</p>
+  </div>
+</section>
+
 </body>
 </html>
