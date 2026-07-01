@@ -44,7 +44,7 @@
       content:"";
       position:fixed;
       inset:0;
-      background:rgba(253,251,247,.42);
+      background:rgba(253,251,247,.34);
       z-index:0;
       pointer-events:none;
     }
@@ -96,6 +96,8 @@
       gap:1rem;
       flex-wrap:wrap;
       text-align:center;
+      position:relative;
+      z-index:2;
     }
 
     .brand{
@@ -181,7 +183,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(255,255,255,.35);
+      background:rgba(255,255,255,.25);
       z-index:0;
       pointer-events:none;
     }
@@ -219,4 +221,293 @@
 
     .content{
       padding:1rem;
-      
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom:1rem;
+      text-align:center;
+    }
+
+    .card{
+      position:relative;
+      border:1px solid rgba(15,42,31,.07);
+      border-radius:16px;
+      padding:1rem;
+      text-align:center;
+      overflow:hidden;
+      min-height:220px;
+      display:flex;
+      align-items:flex-end;
+      background: rgba(255,255,255,.88);
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      backdrop-filter: blur(8px);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(255,255,255,.45);
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .details-grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .detail{
+      display:grid;
+      gap:.35rem;
+      justify-items:center;
+    }
+
+    .detail .label{
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      color:var(--silver);
+    }
+
+    .map-wrap{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(15,42,31,.08);
+      background:#fff;
+      margin:0 auto;
+    }
+
+    .map-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .hero-message{
+      background: rgba(255,255,255,.90);
+      border: 1px solid rgba(15,42,31,.10);
+      border-radius: 18px;
+      padding: 1.2rem 1rem;
+      max-width: 44rem;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 28px rgba(15,42,31,.10);
+    }
+
+    .hero-inner-card{
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(15,42,31,.10);
+      border-radius: 18px;
+      padding: 1.2rem 1rem;
+      max-width: 44rem;
+      margin: 1rem auto 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 28px rgba(15,42,31,.10);
+    }
+
+    .hero-card-image{
+      width: min(180px, 50vw);
+      height: auto;
+      margin: 0 auto 1rem;
+      display: block;
+      filter: drop-shadow(0 10px 18px rgba(15,42,31,.18));
+      animation: floatPulse 3.6s ease-in-out infinite;
+    }
+
+    .hero-inner-card p{
+      margin: .7rem 0;
+    }
+
+    @keyframes floatPulse {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.04) rotate(1deg); }
+    }
+
+    footer{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 1rem 2rem;
+      text-align:center;
+      color:var(--silver);
+      font-size:.9rem;
+      position:relative;
+      z-index:1;
+    }
+
+    @media (min-width: 760px){
+      .nav{
+        flex-wrap:nowrap;
+      }
+
+      .brand{
+        width:auto;
+      }
+
+      .nav button{display:none}
+      .nav ul{
+        display:flex;
+        width:auto;
+      }
+
+      .content{padding:1.25rem 1.25rem 1.4rem}
+      .details-grid{
+        grid-template-columns:1fr;
+      }
+      .hero{
+        min-height:72vh;
+      }
+      .card{
+        text-align:left;
+      }
+      .detail{
+        justify-items:start;
+      }
+    }
+
+    @media (max-width: 420px){
+      .brand{
+        white-space:normal;
+        line-height:1.2;
+      }
+
+      h1{
+        font-size:clamp(2rem, 11vw, 3.2rem);
+      }
+
+      .hero{
+        padding:1.6rem 1rem;
+      }
+
+      .content{
+        padding:.95rem;
+      }
+
+      .card{
+        padding:.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="nav" id="nav">
+      <a class="brand" href="#hero">Karl & Jacqueline - 25th Anniversary Celebration</a>
+      <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
+      <ul id="menu">
+        <li><a href="#details">Details</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#registry">Gifts</a></li>
+        <li><a href="#thanks">Thank You</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero-wrap">
+    <div class="botanical" aria-hidden="true"></div>
+    <main id="main">
+      <section class="hero hero-section" id="hero" aria-labelledby="title">
+        <div class="hero-message">
+          <p class="eyebrow">~ ♡ ~</p>
+          <h1 id="title">25 Wonderful Years of Marriage</h1>
+          <div class="hero-inner-card">
+            <img class="hero-card-image" src="./images/6.jpg" alt="Decorative celebration image">
+            <p>Twenty-Five Years of Love</p>
+            <p>~ ♡ ~</p>
+            <p>Our Love Story Continues...</p>
+            <p>Together with grateful hearts, we joyfully celebrate 25 Wonderful Years of Marriage, thanking Jehovah for His abundant love, guidance, and countless blessings throughout our journey.</p>
+            <p>We would be honoured if you would join us as we celebrate this precious milestone.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" class="details-section">
+        <div class="content">
+          <h2 class="section-title">Event Details</h2>
+          <div class="details-grid">
+            <div class="card">
+              <div class="detail">
+                <span class="label">Date</span>
+                <strong>Saturday, 29 August 2026</strong>
+                <span class="label" style="margin-top:.75rem;">Time</span>
+                <strong>6:00 pm</strong>
+                <span class="label" style="margin-top:.75rem;">Dress Code</span>
+                <strong>Brilliantly Elegant</strong>
+                <p>Come celebrate with us in your favorite shade starting with a “B”. Brown, Beige, Black, Blue, Bronze, Blush, Burgundy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="location-section">
+        <div class="content">
+          <h2 class="section-title">Location</h2>
+          <div class="card">
+            <p><strong>Eagle Canyon Clubhouse</strong><br>Randpark Ridge, South Africa</p>
+            <p>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
+            </p>
+            <div class="map-wrap" aria-label="Map to Eagle Canyon Clubhouse">
+              <iframe
+                title="Eagle Canyon Clubhouse map"
+                loading="lazy"
+                src="https://www.google.com/maps?q=Eagle%20Canyon%20Clubhouse&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="registry" class="registry-section">
+        <div class="content">
+          <h2 class="section-title">Gifts</h2>
+          <div class="card">
+            <p>Your presence is our greatest gift. However, if you would like to honour us with a gift, a card box will be available for contributions towards our next adventure together.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="thanks" class="thanks-section">
+        <div class="content">
+          <h2 class="section-title">Thank You</h2>
+          <div class="card">
+            <img class="thanks-image" src="./images/10.png" alt="Thank you decoration">
+            <p>Thank you for being part of this beautiful celebration and for sharing in our joy.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>🌿 ♡ 🌿</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+
+    menuBtn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>
