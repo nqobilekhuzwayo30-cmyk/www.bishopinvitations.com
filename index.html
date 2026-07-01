@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content="Karl & Jacqueline 25th Anniversary Celebration invitation." />
   <title>Karl & Jacqueline - 25th Anniversary Celebration</title>
 
@@ -16,7 +15,7 @@
       --cream:#FDFBF7;
       --green:#1D3A2B;
       --silver:#7F8C8D;
-      --card:rgba(255,255,255,.78);
+      --card:rgba(255,255,255,.82);
       --shadow:0 10px 30px rgba(29,58,43,.08);
       --radius:18px;
       --max:1100px;
@@ -31,10 +30,391 @@
       font-family:"Cinzel", serif;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
+      line-height:1.7;
       overflow-x:hidden;
     }
 
+    a{color:inherit}
+    img,iframe{max-width:100%;display:block}
+
+    .skip{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    .skip:focus{
+      left:1rem;
+      top:1rem;
+      width:auto;
+      height:auto;
+      padding:.75rem 1rem;
+      background:var(--green);
+      color:var(--cream);
+      z-index:9999;
+      border-radius:10px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(253,251,247,.94);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(29,58,43,.08);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:.85rem 1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.05em;
+      white-space:nowrap;
+      font-size:.95rem;
+    }
+
+    .nav button{
+      border:1px solid var(--green);
+      background:transparent;
+      color:var(--green);
+      border-radius:10px;
+      padding:.55rem .8rem;
+      font:inherit;
+    }
+
+    .nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:none;
+      gap:1rem;
+      flex-wrap:wrap;
+      width:100%;
+    }
+
+    .nav a{
+      text-decoration:none;
+      font-size:.95rem;
+    }
+
+    .nav.open ul{display:flex}
+
+    .hero-wrap{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .botanical{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.16;
+      background:
+        radial-gradient(circle at top left, rgba(29,58,43,.28), transparent 22%),
+        radial-gradient(circle at top right, rgba(29,58,43,.18), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(127,140,141,.18), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(29,58,43,.22), transparent 22%);
+      z-index:0;
+    }
+
+    main{
+      position:relative;
+      z-index:1;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:1rem;
+    }
+
+    section{
+      margin:1rem 0 1.25rem;
+      background:var(--card);
+      border:1px solid rgba(29,58,43,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      min-height:68vh;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:2rem 1rem;
+    }
+
+    .eyebrow{
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(1.5rem, 4vw, 2.6rem);
+      margin:0 0 .35rem;
+      color:var(--silver);
+    }
+
+    h1, h2, h3{
+      margin:0;
+      line-height:1.15;
+    }
+
+    h1{
+      font-size:clamp(2rem, 7vw, 4.8rem);
+      letter-spacing:.02em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      max-width:44rem;
+      margin:1rem auto 0;
+      font-size:1rem;
+      color:var(--silver);
+    }
+
+    .content{
+      padding:1rem;
+    }
+
+    .section-title{
+      font-size:clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom:1rem;
+    }
+
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(29,58,43,.07);
+      border-radius:16px;
+      padding:1rem;
+    }
+
+    .details-grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .detail{
+      display:grid;
+      gap:.35rem;
+    }
+
+    .detail .label{
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      color:var(--silver);
+    }
+
+    .map-wrap{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(29,58,43,.08);
+      background:#fff;
+    }
+
+    .map-wrap iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .note{
+      color:var(--silver);
+      font-size:.95rem;
+    }
+
+    footer{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 1rem 2rem;
+      text-align:center;
+      color:var(--silver);
+      font-size:.9rem;
+    }
+
+    @media (min-width: 760px){
+      .nav{
+        flex-wrap:nowrap;
+      }
+
+      .nav button{display:none}
+      .nav ul{
+        display:flex;
+        width:auto;
+      }
+
+      .content{padding:1.25rem 1.25rem 1.4rem}
+      .details-grid{
+        grid-template-columns:1.1fr .9fr;
+      }
+      .grid.two{
+        grid-template-columns:1fr 1fr;
+      }
+      .hero{
+        min-height:72vh;
+      }
+      .brand{
+        font-size:1rem;
+      }
+    }
+
+    @media (max-width: 420px){
+      .brand{
+        white-space:normal;
+        line-height:1.2;
+      }
+
+      .nav{
+        align-items:flex-start;
+      }
+
+      h1{
+        font-size:clamp(2rem, 11vw, 3.2rem);
+      }
+
+      .hero{
+        padding:1.6rem 1rem;
+      }
+
+      .content{
+        padding:.95rem;
+      }
+
+      .card{
+        padding:.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="nav" id="nav">
+      <a class="brand" href="#hero">Karl & Jacqueline - 25th Anniversary Celebration</a>
+      <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
+      <ul id="menu">
+        <li><a href="#details">Details</a></li>
+        <li><a href="#registry">Registry</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero-wrap">
+    <div class="botanical" aria-hidden="true"></div>
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="title">
+        <div>
+          <p class="eyebrow">~ ♡ ~</p>
+          <h1 id="title">25 Wonderful Years of Marriage</h1>
+          <p>Twenty-Five Years of Love<br>~ ♡ ~<br>Karl & Jacqueline<br>Our Love Story Continues...</p>
+          <p>Together with grateful hearts, we joyfully celebrate 25 Wonderful Years of Marriage, thanking Jehovah for His abundant love, guidance, and countless blessings throughout our journey.</p>
+          <p>We would be honoured if you would join us as we celebrate this precious milestone.</p>
+        </div>
+      </section>
+
+      <section id="details">
+        <div class="content">
+          <h2 class="section-title">Event Details</h2>
+          <div class="details-grid">
+            <div class="card">
+              <div class="detail">
+                <span class="label">Celebration</span>
+                <strong>Karl & Jacqueline - 25th Anniversary Celebration</strong>
+              </div>
+              <div class="detail" style="margin-top:1rem;">
+                <span class="label">Date</span>
+                <strong>Saturday, 29 August 2026</strong>
+              </div>
+              <div class="detail" style="margin-top:1rem;">
+                <span class="label">Time</span>
+                <strong>6:00 pm</strong>
+                <span>Guests to be seated.</span>
+              </div>
+              <div class="detail" style="margin-top:1rem;">
+                <span class="label">Venue</span>
+                <strong>Eagle Canyon Clubhouse</strong>
+                <span>Randpark Ridge, South Africa</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom:.8rem;">Dress Code</h3>
+              <p><strong>Brilliantly Elegant</strong></p>
+              <p>Come celebrate with us in your favorite shade starting with a “B”.</p>
+              <p>Brown, Beige, Black, Blue, Bronze, Blush, Burgundy</p>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;" class="card">
+            <h3 style="margin-bottom:.8rem;">Location</h3>
+            <p class="note">Use the map for quick navigation or open directions on your phone.</p>
+            <p>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
+            </p>
+            <div class="map-wrap" aria-label="Map to Eagle Canyon Clubhouse">
+              <iframe
+                title="Eagle Canyon Clubhouse map"
+                loading="lazy"
+                src="https://www.google.com/maps?q=Eagle%20Canyon%20Clubhouse&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="registry">
+        <div class="content">
+          <h2 class="section-title">Registry & Gift Guidance</h2>
+          <div class="grid two">
+            <div class="card">
+              <h3>Card Box</h3>
+              <p>If you would like to be a part of our next adventure, a card box will be available at the celebration.</p>
+            </div>
+            <div class="card">
+              <h3>Gift</h3>
+              <p>Your presence is our greatest gift.</p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:1rem;">Privacy note: this page keeps family details private.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>🌿 ♡ 🌿</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+
+    menuBtn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+          </html>
     a{color:inherit}
     img,iframe{max-width:100%;display:block}
     .skip{
