@@ -25,6 +25,7 @@
     }
 
     *{box-sizing:border-box}
+
     html{
       scroll-behavior:smooth;
       min-height:100%;
@@ -55,8 +56,8 @@
     a{color:inherit}
     img,iframe,video{max-width:100%;display:block}
 
-    h1, h2, h3, p, a, strong, .label {
-      text-shadow: 0 1px 3px rgba(0,0,0,.08);
+    h1, h2, h3, p, a, strong, .label{
+      text-shadow:0 1px 3px rgba(0,0,0,.08);
     }
 
     .skip{
@@ -165,11 +166,11 @@
       z-index:1;
       max-width:var(--max);
       margin:0 auto;
-      padding:1.25rem 1rem 2rem;
+      padding:1.25rem 1rem 0;
     }
 
     section{
-      margin:2.35rem 0;
+      margin:3rem 0;
       background:var(--card);
       border:1px solid rgba(15,42,31,.06);
       border-radius:var(--radius);
@@ -247,11 +248,11 @@
       justify-content:center;
       flex-direction:column;
       gap:.7rem;
-      background: rgba(255,255,255,.80);
+      background:rgba(255,255,255,.80);
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
     }
 
     .card::before{
@@ -312,30 +313,30 @@
     }
 
     .hero-message{
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(15,42,31,.10);
-      border-radius: 18px;
-      padding: 1.25rem 1rem;
-      max-width: 44rem;
-      margin: 0 auto;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 28px rgba(15,42,31,.10);
+      background:rgba(255,255,255,.90);
+      border:1px solid rgba(15,42,31,.10);
+      border-radius:18px;
+      padding:1.25rem 1rem;
+      max-width:44rem;
+      margin:0 auto;
+      backdrop-filter:blur(10px);
+      box-shadow:0 12px 28px rgba(15,42,31,.10);
     }
 
     .hero-inner-card{
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(15,42,31,.10);
-      border-radius: 18px;
-      padding: 1.25rem 1rem;
-      max-width: 44rem;
-      margin: 1rem auto 0;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 28px rgba(15,42,31,.10);
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(15,42,31,.10);
+      border-radius:18px;
+      padding:1.25rem 1rem;
+      max-width:44rem;
+      margin:1rem auto 0;
+      backdrop-filter:blur(10px);
+      box-shadow:0 12px 28px rgba(15,42,31,.10);
     }
 
     .hero-video{
-      width:min(520px, 100%);
-      aspect-ratio: 16 / 9;
+      width:min(560px, 100%);
+      aspect-ratio:16 / 9;
       margin:0 auto 1rem;
       border-radius:16px;
       overflow:hidden;
@@ -351,7 +352,7 @@
     }
 
     .hero-inner-card p{
-      margin: .75rem 0;
+      margin:.75rem 0;
       text-align:center;
     }
 
@@ -396,7 +397,7 @@
     footer{
       max-width:var(--max);
       margin:0 auto;
-      padding:0 1rem 2rem;
+      padding:0 1rem 6rem;
       text-align:center;
       color:var(--silver);
       font-size:.9rem;
@@ -427,9 +428,6 @@
         min-height:84vh;
         padding:3.5rem 1rem;
       }
-      .hero-video{
-        width:min(560px, 100%);
-      }
     }
 
     @media (max-width: 420px){
@@ -452,6 +450,10 @@
 
       .card{
         padding:.95rem;
+      }
+
+      footer{
+        padding-bottom:7rem;
       }
     }
   </style>
