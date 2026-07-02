@@ -47,7 +47,7 @@
       content:"";
       position:fixed;
       inset:0;
-      background:rgba(253,251,247,.16);
+      background:rgba(253,251,247,.14);
       z-index:0;
       pointer-events:none;
     }
@@ -169,7 +169,7 @@
     }
 
     section{
-      margin:1.75rem 0;
+      margin:2.35rem 0;
       background:var(--card);
       border:1px solid rgba(15,42,31,.06);
       border-radius:var(--radius);
@@ -186,7 +186,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(255,255,255,.14);
+      background:rgba(255,255,255,.12);
       z-index:0;
       pointer-events:none;
     }
@@ -197,11 +197,11 @@
     }
 
     .hero{
-      min-height:72vh;
+      min-height:78vh;
       display:grid;
       place-items:center;
       text-align:center;
-      padding:2.5rem 1rem;
+      padding:3rem 1rem;
     }
 
     .eyebrow{
@@ -258,7 +258,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(255,255,255,.34);
+      background:rgba(255,255,255,.30);
       z-index:0;
       pointer-events:none;
     }
@@ -333,17 +333,20 @@
       box-shadow: 0 12px 28px rgba(15,42,31,.10);
     }
 
-    .hero-media{
-      width: min(260px, 92%);
-      margin: 0 auto 1rem;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 18px rgba(15,42,31,.16);
+    .hero-video{
+      width:min(520px, 100%);
+      aspect-ratio: 16 / 9;
+      margin:0 auto 1rem;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 18px rgba(15,42,31,.16);
+      background:#000;
     }
 
-    .hero-media video{
+    .hero-video video{
       width:100%;
-      height:auto;
+      height:100%;
+      object-fit:cover;
       display:block;
     }
 
@@ -421,8 +424,11 @@
         grid-template-columns:1fr;
       }
       .hero{
-        min-height:78vh;
-        padding:3rem 1rem;
+        min-height:84vh;
+        padding:3.5rem 1rem;
+      }
+      .hero-video{
+        width:min(560px, 100%);
       }
     }
 
@@ -475,8 +481,8 @@
           <p class="eyebrow">~ ♡ ~</p>
           <h1 id="title">25 Wonderful Years of Marriage</h1>
           <div class="hero-inner-card">
-            <div class="hero-media">
-              <video controls playsinline preload="metadata">
+            <div class="hero-video">
+              <video autoplay loop muted playsinline preload="metadata">
                 <source src="./video/1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
