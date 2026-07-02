@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Karl & Jacqueline 25th Anniversary Celebration invitation." />
   <title>Karl & Jacqueline - 25th Anniversary Celebration</title>
+  <link rel="icon" type="image/jpeg" href="image/6.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,7 @@
       --max:1100px;
       --wa:#25D366;
       --wa-dark:#1fa956;
+      --header-h:84px;
     }
 
     *{box-sizing:border-box}
@@ -29,6 +31,7 @@
     html{
       scroll-behavior:smooth;
       min-height:100%;
+      scroll-padding-top:var(--header-h);
     }
 
     body{
@@ -88,10 +91,14 @@
       background:rgba(253,251,247,.88);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(15,42,31,.08);
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
     }
 
     .nav{
       max-width:var(--max);
+      width:100%;
       margin:0 auto;
       padding:.95rem 1rem;
       display:flex;
@@ -140,6 +147,16 @@
       font-size:.95rem;
     }
 
+    .nav a:focus-visible,
+    .nav button:focus-visible,
+    .wa-btn:focus-visible,
+    footer a:focus-visible,
+    .map-link:focus-visible{
+      outline:3px solid rgba(15,42,31,.35);
+      outline-offset:3px;
+      border-radius:10px;
+    }
+
     .nav.open ul{display:flex}
 
     .hero-wrap{
@@ -181,6 +198,15 @@
       background-position:center;
       background-repeat:no-repeat;
       z-index:1;
+      scroll-margin-top:calc(var(--header-h) + 1.5rem);
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    section.is-visible{
+      opacity:1;
+      transform:translateY(0);
     }
 
     section::before{
@@ -406,12 +432,21 @@
       z-index:1;
     }
 
-    footer p{
-      margin:0;
+    footer p{margin:0}
+    footer p + p{margin-top:2rem}
+
+    .footnote{
+      margin-top:1.25rem;
+      font-size:.78rem;
+      color:var(--silver);
+      font-weight:600;
     }
 
-    footer p + p{
-      margin-top:2rem;
+    .map-link{
+      display:inline-block;
+      margin-top:.35rem;
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     @media (min-width: 760px){
@@ -465,13 +500,41 @@
         padding-bottom:20rem;
       }
     }
+
+    @media (hover:hover){
+      .card, .wa-btn, .nav a{
+        transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      }
+
+      .card:hover{
+        transform:translateY(-2px);
+      }
+    }
+
+    @media (max-width: 900px){
+      body{
+        background-attachment:scroll;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      section{
+        transition:none;
+        opacity:1;
+        transform:none;
+      }
+      .wa-btn, .card{
+        transition:none;
+      }
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Primary navigation">
       <a class="brand" href="#hero">Karl & Jacqueline - 25th Anniversary Celebration</a>
       <button type="button" id="menuBtn" aria-controls="menu" aria-expanded="false">Menu</button>
       <ul id="menu">
@@ -532,12 +595,13 @@
           <div class="card">
             <p><strong>Eagle Canyon Clubhouse</strong><br>Randpark Ridge, South Africa</p>
             <p>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
+              <a class="map-link" href="https://www.google.com/maps/dir/?api=1&destination=Eagle+Canyon+Clubhouse" target="_blank" rel="noopener">Open directions to Eagle Canyon Clubhouse</a>
             </p>
             <div class="map-wrap" aria-label="Map to Eagle Canyon Clubhouse">
               <iframe
                 title="Eagle Canyon Clubhouse map"
                 loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps?q=Eagle%20Canyon%20Clubhouse&output=embed">
               </iframe>
             </div>
@@ -586,11 +650,20 @@
   <script>
     const nav = document.getElementById('nav');
     const menuBtn = document.getElementById('menuBtn');
+    const sections = document.querySelectorAll('section');
 
     menuBtn?.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', String(open));
     });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.14 });
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
